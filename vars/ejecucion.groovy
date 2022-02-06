@@ -20,17 +20,18 @@ pipeline {
                     //sh "env"
 
                     sh "echo ========================================= hola estoy aqui =================================="
-                    sh "env.GIT_BRANCH"
-                    sh "echo [${env.GIT_BRANCH}]"
+                    sh "echo env.GIT_BRANCH"
+
+                    sh "echo  ${env.GIT_BRANCH}"
                     env.DESCRTIPTION_STAGE = ""
                   switch(params.compileTool)
                     {
                         case 'Maven':
-                            gradle.call(params.stages);
-                        break;
+                            gradle.call(params.stages)
+                        break
                         case 'Gradle':
-                            gradle.call(params.stages);
-                        break;
+                            gradle.call(params.stages)
+                        break
                     }
                 }
             }
