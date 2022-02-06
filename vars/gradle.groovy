@@ -74,7 +74,7 @@ def stageDownloadNexus() { env.DESCRTIPTION_STAGE = 'Paso 5: Descargar Nexus'
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
     } }
-def stageCurlJar() { env.DESCRTIPTION_STAGE = 'Paso 6: Levantar Artefacto Jar'
+def stageRunJar() { env.DESCRTIPTION_STAGE = 'Paso 6: Levantar Artefacto Jar'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
