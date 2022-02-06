@@ -49,14 +49,6 @@ def allStages() {
     stageCurlJar()
 }
 
-def stageCleanBuildTest() {
-    env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
-    stage("${env.DESCRTIPTION_STAGE}") {
-        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
-        sh "echo  ${env.STAGE}"
-    }
-}
-
 def stageCleanBuildTest() { env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
