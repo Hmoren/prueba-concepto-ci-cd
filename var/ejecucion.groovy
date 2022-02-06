@@ -17,8 +17,11 @@ pipeline {
         stage("Pipeline"){
             steps {
                 script{
-                    sh "env"
+                    //sh "env"
+
+                    sh "echo ========================================= hola estoy aqui =================================="
                     sh "env.GIT_BRANCH"
+                    sh "echo [${env.GIT_BRANCH}]"
                     env.DESCRTIPTION_STAGE = ""
                   switch(params.compileTool)
                     {
