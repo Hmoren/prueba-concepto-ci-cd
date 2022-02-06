@@ -57,32 +57,32 @@ def stageCleanBuildTest() {
     }
 }
 
-def stageSonar() { env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
+def stageCleanBuildTest() { env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
     }}
-def stageRunSpringCurl() { env.DESCRTIPTION_STAGE = 'Paso 2: Sonar - Análisis Estático'
+def stageSonar() { env.DESCRTIPTION_STAGE = 'Paso 2: Sonar - Análisis Estático'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
     } }
-def stageUploadNexus() { env.DESCRTIPTION_STAGE = 'Paso 3: Curl Springboot Gralde sleep 20'
+def stageRunSpringCurl() { env.DESCRTIPTION_STAGE = 'Paso 3: Curl Springboot Gralde sleep 20'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
     } }
-def stageDownloadNexus() { env.DESCRTIPTION_STAGE = 'Paso 4: Subir Nexus'
+def stageUploadNexus() { env.DESCRTIPTION_STAGE = 'Paso 4: Subir Nexus'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
     } }
-def stageRunJar() { env.DESCRTIPTION_STAGE = 'Paso 5: Descargar Nexus'
+def stageDownloadNexus() { env.DESCRTIPTION_STAGE = 'Paso 5: Descargar Nexus'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
     } }
-def stageRunJar() { env.DESCRTIPTION_STAGE = 'Paso 6: Levantar Artefacto Jar'
+def stageCurlJar() { env.DESCRTIPTION_STAGE = 'Paso 6: Levantar Artefacto Jar'
     stage("${env.DESCRTIPTION_STAGE}") {
         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
         sh "echo  ${env.STAGE}"
