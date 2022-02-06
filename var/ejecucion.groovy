@@ -14,7 +14,7 @@ pipeline {
         text description: 'Enviar los stages separados por ";" ... (Ejemplo: build;test;sonar;nexus) Vacio si necesita todos los stages', name: 'stages'
     }
     stages {
-        stage("Pipeline"){
+        stage("pipeline-cicd"){
             steps {
                 script{
                     //sh "env"
