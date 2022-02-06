@@ -49,23 +49,57 @@ def allStages() {
     stageCurlJar()
 }
 
-def stageCleanBuildTest(){ sh "echo  stageCleanBuildTest"}
-def stageSonar(){ sh "echo  stageSonar"}
-def stageRunSpringCurl(){ sh "echo  stageRunSpringCurl"}
-def stageUploadNexus(){ sh "echo  stageUploadNexus"}
-def stageDownloadNexus(){ sh "echo  stageDownloadNexus"}
-def stageRunJar(){ sh "echo  stageRunJar"}
-def stageRunJar(){ sh "echo  stageRunJar"}
-def stageCurlJar(){ sh "echo  stageCurlJar"}
+def stageCleanBuildTest() {
+    env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    }
+}
 
+def stageSonar() { env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    }}
+def stageRunSpringCurl() { env.DESCRTIPTION_STAGE = 'Paso 2: Sonar - Análisis Estático'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    } }
+def stageUploadNexus() { env.DESCRTIPTION_STAGE = 'Paso 3: Curl Springboot Gralde sleep 20'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    } }
+def stageDownloadNexus() { env.DESCRTIPTION_STAGE = 'Paso 4: Subir Nexus'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    } }
+def stageRunJar() { env.DESCRTIPTION_STAGE = 'Paso 5: Descargar Nexus'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    } }
+def stageRunJar() { env.DESCRTIPTION_STAGE = 'Paso 6: Levantar Artefacto Jar'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    }}
+def stageCurlJar() { env.DESCRTIPTION_STAGE = 'Paso 7: Testear Artefacto - Dormir Esperar 20sg'
+    stage("${env.DESCRTIPTION_STAGE}") {
+        env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+        sh "echo  ${env.STAGE}"
+    } }
 
 // def stageCleanBuildTest() {
-//     env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
-//     stage("${env.DESCRTIPTION_STAGE}") {
-//         env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
-//         sh "echo  ${env.STAGE}"
-//         sh 'gradle clean build'
-//     }
+    // env.DESCRTIPTION_STAGE = 'Paso 1: Build - Test'
+    // stage("${env.DESCRTIPTION_STAGE}") {
+    //     env.STAGE = "build - ${env.DESCRTIPTION_STAGE}"
+    //     sh "echo  ${env.STAGE}"
+    //     sh 'gradle clean build'
+    // }
 // }
 
 // def stageSonar() {
